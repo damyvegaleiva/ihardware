@@ -1,0 +1,130 @@
+.contact-us-section {
+  background: #626462;
+  width: 100%;
+}
+
+.contact-us-section__title {
+  width: 100%;
+  margin-top: 50px;
+  h2 {
+    width: fit-content;
+    margin: auto auto 25px;
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+  }
+}
+
+.contact-us-container {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 50px;
+
+  .contact-us-left {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    h3 {
+      color: #0e94cd;
+      text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+      font-size: 2.7rem;
+      border-radius: 10px;
+      background: #0e94cd;
+      max-width: 500px;
+      margin: auto auto 10px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      color: white;
+      font-size: 2rem;
+    }
+
+    p {
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  .contact-us-right {
+    .contact-us-form {
+      padding: 15px;
+      display: flex;
+      flex-flow: column wrap;
+      gap: 0.5rem;
+      margin: auto;
+      max-width: 750px;
+
+      input {
+        font-size: 1.75rem;
+        min-height: 35px;
+        padding: 5px 10px 5px;
+      }
+
+      label {
+        color: #ed4337;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        background: wheat;
+        width: fit-content;
+        border-radius: 2px;
+        padding: 0 5px;
+      }
+
+      textarea {
+        padding: 10px 10px 5px;
+        min-height: 140px;
+      }
+
+      button {
+        height: 30px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .contact-us-right {
+    margin: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contact-us-container {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      " area1 area2 area2 area3"
+      " area1 area4 area5 area3";
+
+    .contact-us-left {
+      text-align: left;
+      grid-area: area4;
+      h3 {
+        margin: 0 0 10px;
+      }
+    }
+  }
+
+  .contact-us-section__title {
+    grid-area: area2;
+  }
+
+  .contact-us-right {
+    grid-area: area5;
+    max-width: 550px;
+  }
+}

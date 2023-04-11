@@ -1,0 +1,30 @@
+.item-list-container__title{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    background: #d5a727;
+}
+
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    border-top: 3px solid #a5a509;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 300px auto 0;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
