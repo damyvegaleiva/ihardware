@@ -17,6 +17,7 @@ const ItemDetail = ({ name, price, stock, img, id }) => {
       <h2>{name}</h2>
       <img src={img} alt={name} width={350} />
       <h3>Precio: ${price}</h3>
+      <h2>Stock available: {stock}</h2>
       {isInCart(id) ? <AfterAddToCartOptions />
         : <ItemCount stock={stock} handleOnAdd={handleOnAdd} />}
     </article>
