@@ -1,12 +1,27 @@
-const CartItem = ({ name, qty, price, handleRemove, id, img }) => {
+const CartItem = ({ name, qty, price, handleRemove, id, img, add, subs }) => {
   return (
-    <div className="cart-item">
-      <img src={img} alt={name} style={{ width: "5%" }} />
-      <h1>{name}</h1>
-      <h2>{qty}</h2>
-      <h3>${price}</h3>
-      <button onClick={() => handleRemove(id)}>🗑️</button>
-    </div>
+    <tr className="cart-item">
+      <th className="cart-item__img">
+        <img src={img} alt={name} />
+      </th>
+      <th className="cart-item__name">
+        <h2>{name}</h2>
+      </th>
+      <th>
+        <div className="cart-item__options">
+          <button onClick={() => subs(id)}>-</button>
+          <h2>{qty}</h2>
+          <button onClick={() => add(id)}>+</button>
+        </div>
+      </th>
+
+      <th>
+        <h2>${price}</h2>
+      </th>
+      <th>
+        <button onClick={() => handleRemove(id)}>🗑️</button>
+      </th>
+    </tr>
   );
 };
 

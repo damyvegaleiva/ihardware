@@ -1,7 +1,24 @@
 .cart-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
+  .cart-item__img {
+    width: 7%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .cart-item__name {
+    width: 25%;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .cart-item__options {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }

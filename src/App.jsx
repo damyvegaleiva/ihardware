@@ -16,13 +16,10 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route
-                path="/"
-                element={<ItemListContainer title={"Welcome to iHardware"} />}
-              />
+              <Route path="/" element={<ItemListContainer />} />
               <Route
                 path="/category/:categoryId"
-                element={<ItemListContainer title="Filtered section" />}
+                element={<ItemListContainer />}
               />
               <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<CartContainer />} />

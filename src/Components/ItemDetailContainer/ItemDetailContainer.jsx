@@ -5,41 +5,41 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../Services/Firebase/firebaseConfig";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
-    const [isLoading, setIsLoading] = useState(true)
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-    const { itemId } = useParams();
+  const { itemId } = useParams();
 
+  useEffect(() => {
+    setIsLoading(true);
 
-    useEffect(() => {
-        setIsLoading(true)
+    setTimeout(() => {
+      const docRef = doc(db, "products", itemId);
 
-        setTimeout(() => {
-            const docRef = doc(db, 'products', itemId)
+      getDoc(docRef)
+        .then((doc) => {
+          const dataProduct = doc.data();
+          const productAdapted = { id: doc.id, ...dataProduct };
+          setProduct(productAdapted);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }, [500]);
+  }, [itemId]);
 
-            getDoc(docRef).then(doc => {
-                const dataProduct = doc.data()
-                const productAdapted = { id: doc.id, ...dataProduct }
-                setProduct(productAdapted)
-            }).catch(err => {
-                console.log(err)
-            }).finally(() => {
-                setIsLoading(false)
-            })
+  if (isLoading) {
+    return <span className="loader"></span>;
+  }
 
-        }, [500])
-    }, [itemId]);
-
-
-    if (isLoading) {
-        return <span className="loader" ></span >
-    }
-
-    return (
-        <>
-            <ItemDetail {...product} />
-        </>
-    );
-}
+  return (
+    <>
+      <ItemDetail {...product} />
+    </>
+  );
+};
 
 export default ItemDetailContainer;

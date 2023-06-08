@@ -3,7 +3,7 @@ import ItemList from "../ItemList/ItemList";
 import useFetch from "../../Hooks/useFetch";
 import HelmetTitle from "../Helmet/Helmet";
 
-const ItemListContainer = ({ title }) => {
+const ItemListContainer = () => {
   const { categoryId } = useParams();
   const { isLoading, products } = useFetch(categoryId);
 
@@ -18,7 +18,9 @@ const ItemListContainer = ({ title }) => {
 
   return (
     <section>
-      <h1 className="item-list-container__title">{title}</h1>
+      <h2 className="container-title">
+        {categoryId ? categoryId : "iHardware"}
+      </h2>
       <ItemList products={products} />
     </section>
   );

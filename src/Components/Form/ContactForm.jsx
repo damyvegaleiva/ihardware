@@ -42,40 +42,40 @@ const ContactForm = ({ placeOrder }) => {
 
   return (
     <div className="contact-us-container">
-      <div className="contact-us-right">
-        <form className="contact-us-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="First Name"
-            name="firstName"
-            value={form.firstName}
-            onChange={handleChange}
-          />
-          {errors.firstName && <label>{errors.firstName}</label>}
+      <h2 className="container-title">Buyer&apos;s Info</h2>
 
-          <input
-            type="text"
-            placeholder="Last Name"
-            name="lastName"
-            value={form.lastName}
-            onChange={handleChange}
-          />
-          {errors.lastName && <label>{errors.lastName}</label>}
+      <form className="contact-us-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="First Name"
+          name="firstName"
+          value={form.firstName}
+          onChange={handleChange}
+        />
+        {errors.firstName && <label>{errors.firstName}</label>}
 
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
-          {errors.email && <label>{errors.email}</label>}
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+          value={form.lastName}
+          onChange={handleChange}
+        />
+        {errors.lastName && <label>{errors.lastName}</label>}
 
-          <button disabled={loading}>
-            {loading ? "Sending..." : "Place Order"}
-          </button>
-        </form>
-      </div>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
+        {errors.email && <label>{errors.email}</label>}
+
+        <button disabled={loading}>
+          {loading ? "Sending..." : "Place Order"}
+        </button>
+      </form>
     </div>
   );
 };

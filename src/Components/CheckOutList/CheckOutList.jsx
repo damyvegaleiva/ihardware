@@ -1,20 +1,32 @@
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import ContactForm from "../Form/ContactForm";
+import CheckOutItem from "../CheckOutItem/CheckOutItem";
 
 const CheckOutList = ({ createOrder }) => {
   const { cart, total } = useContext(CartContext);
 
   return (
-    <div>
-      <h1>CheckOut</h1>
-      {cart.map((prod) => (
-        <div key={prod.id}>
-          {prod.qty}
-          <img src={prod.img} style={{ width: "5%" }} alt={prod.name} />{" "}
-          {prod.name} ${prod.price}
-        </div>
-      ))}
+    <div className="checkout-list__container">
+      <h2 className="container-title">CheckOut</h2>
+
+      <table className="cart-container__list">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {cart.map((prod) => (
+            <CheckOutItem key={prod.id} {...prod} />
+          ))}
+        </tbody>
+      </table>
+
       <h2>Total: ${total}</h2>
       <ContactForm placeOrder={createOrder} />
     </div>

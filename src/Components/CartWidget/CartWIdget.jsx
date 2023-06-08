@@ -8,7 +8,7 @@ const CartWidget = () => {
   const navigate = useNavigate();
 
   return (
-    <div onClick={() => navigate("/cart")}>
+    <div className="cart-widget__container" onClick={() => navigate("/cart")}>
       <span>
         {" "}
         <FiShoppingCart />{" "}

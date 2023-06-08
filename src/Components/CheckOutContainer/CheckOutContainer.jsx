@@ -87,19 +87,28 @@ const CheckOutContainer = () => {
   };
 
   if (loading) {
-    return <h1>Placing order...</h1>;
+    return (
+      <div className="checkout-container">
+        <h1>Placing order...</h1>
+      </div>
+    );
   }
 
   if (orderId) {
     return (
-      <div>
+      <div className="checkout-container">
         <h2>El id de su compra es: {orderId}</h2>
+        <p>Thanks for buying with us.</p>
       </div>
     );
   }
 
   if (cart.length === 0) {
-    return <h2>Cart can&apos;t be empty</h2>;
+    return (
+      <div className="checkout-container">
+        <h2>Cart can&apos;t be empty</h2>
+      </div>
+    );
   }
 
   return <CheckOutList createOrder={createOrder} />;
