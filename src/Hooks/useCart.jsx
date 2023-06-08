@@ -30,11 +30,8 @@ const useCart = () => {
   const add = (id) => {
     setCart((prev) =>
       prev.map((prod) =>
-        prod.id === id
-          ? {
-              ...prod,
-              qty: prod.qty < prod.stock ? prod.qty++ : prod.qty,
-            }
+        prod.id === id && prod.qty < prod.stock
+          ? { ...prod, qty: prod.qty + 1 }
           : { ...prod }
       )
     );
@@ -43,11 +40,8 @@ const useCart = () => {
   const subs = (id) => {
     setCart((prev) =>
       prev.map((prod) =>
-        prod.id === id
-          ? {
-              ...prod,
-              qty: prod.qty > 1 ? prod.qty-- : prod.qty,
-            }
+        prod.id === id && prod.qty > 1
+          ? { ...prod, qty: prod.qty - 1 }
           : { ...prod }
       )
     );
