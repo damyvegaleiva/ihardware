@@ -17,16 +17,20 @@ const ItemListContainer = () => {
   }
 
   return (
-    <section>
-      <h1 className="container-title">
-        {categoryId ? categoryId : "iHardware"}
-      </h1>
+    <>
+      <HelmetTitle title={"iHardware"} />
 
-      <h2 className="item-list__title">
-        {categoryId ? "" : "All our products"}
-      </h2>
-      <ItemList products={products} />
-    </section>
+      <section>
+        <h1 className="container-title">
+          {categoryId ? categoryId : "iHardware"}
+        </h1>
+
+        <h2 className="item-list__title">
+          {categoryId ? "" : "All our products"}
+        </h2>
+        <ItemList products={products} />
+      </section>
+    </>
   );
 };
 
