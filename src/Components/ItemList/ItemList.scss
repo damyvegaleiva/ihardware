@@ -1,9 +1,15 @@
-.item-list-container__list{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-    margin: auto;
-    width: 100%;
+.item-list-container__list {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: auto;
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d5a727;
+    cursor: pointer;
+  }
 }

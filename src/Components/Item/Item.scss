@@ -1,8 +1,10 @@
-.item-list-container__list {
-  button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #d5a727;
-    cursor: pointer;
+.item-list-container__item {
+  margin-bottom: 50px;
+  h3 {
+    margin-bottom: 15px;
+  }
+  img {
+    width: 300px;
+    height: fit-content;
   }
 }

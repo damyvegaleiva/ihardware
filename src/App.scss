@@ -1,6 +1,7 @@
 @import "./Components/ItemListContainer/ItemListContainer.scss";
 @import "./Components/ItemList/ItemList.scss";
-@import "./Components/NavBar/NavBar.scss";
+@import "./Components/NavBarContainer/NavBarContainer.scss";
+@import "./Components/NavBarList/NavBarList.scss";
 @import "./Components/Item/Item.scss";
 @import "./Components/ItemDetail/ItemDetail.scss";
 @import "./Components/ItemCount/ItemCount.scss";
@@ -11,9 +12,22 @@
 @import "./Components/CartContainer/CartContainer.scss";
 @import "./Components/CheckOutList/CheckOutList.scss";
 @import "./Components/CheckOutContainer/CheckOutContainer.scss";
+@import "./SassStyles/breakpoints.scss";
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  // font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

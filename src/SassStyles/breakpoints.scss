@@ -1,0 +1,24 @@
+@media screen and (min-width: 768px) {
+  .container-title {
+    margin-top: 15px;
+  }
+  nav {
+    margin: auto;
+    width: 50%;
+  }
+
+  .navbar-container {
+    position: initial;
+  }
+
+  .navbar-container__list {
+    position: initial;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .hamburguer-btn {
+    display: none;
+  }
+}

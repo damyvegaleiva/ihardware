@@ -1,10 +1,23 @@
-.item-detail-container__item{
-    border: 2px solid bisque;
-    margin: 25px;
-    background: bisque;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.item-detail-container__item {
+  width: 75%;
+  border: 2px solid bisque;
+  margin: 75px auto;
+  background: bisque;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  max-width: 1000px;
+  gap: 15px;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
 }

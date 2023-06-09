@@ -6,8 +6,6 @@ const useFetch = (categoryId) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(categoryId);
-
   useEffect(() => {
     setIsLoading(true);
 

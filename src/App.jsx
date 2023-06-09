@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./Context/CartContext";
-import NavBar from "./Components/NavBar/NavBar";
+import NavBarContainer from "./Components/NavBarContainer/NavBarContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import CartContainer from "./Components/CartContainer/CartContainer";
@@ -14,7 +14,7 @@ function App() {
       <HelmetProvider>
         <CartProvider>
           <BrowserRouter>
-            <NavBar />
+            <NavBarContainer />
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route
