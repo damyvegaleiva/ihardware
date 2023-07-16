@@ -1,5 +1,12 @@
 .checkout-container {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
   margin-top: 100px;
+  gap: 25px;
+
+  h2 {
+    font-size: 2rem;
+  }
 }

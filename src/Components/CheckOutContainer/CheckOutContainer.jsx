@@ -97,8 +97,8 @@ const CheckOutContainer = () => {
   if (orderId) {
     return (
       <div className="checkout-container">
-        <h2>El id de su compra es: {orderId}</h2>
-        <p>Thanks for buying with us.</p>
+        <h2>Thanks for buying with us.</h2>
+        <p>El id de su compra es: {orderId}</p>
       </div>
     );
   }
