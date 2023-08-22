@@ -1,9 +1,9 @@
 .item-list-container__list {
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  flex-flow: row wrap;
+  text-align: center;
   margin: auto;
 
   button {
@@ -11,5 +11,12 @@
     border-radius: 5px;
     border: 1px solid #d5a727;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item-list-container__list {
+    flex-direction: row;
+    align-items: stretch;
   }
 }

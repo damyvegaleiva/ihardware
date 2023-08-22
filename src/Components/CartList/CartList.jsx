@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext";
 import CartItem from "../CartItem/CartItem";
 
 const CartList = () => {
-  const { cart, removeItem, add, subs } = useContext(CartContext);
+  const { cart, removeItem, addQty, removeQty } = useContext(CartContext);
 
   return (
     <table className="cart-container__list">
@@ -23,8 +23,8 @@ const CartList = () => {
             key={prod.id}
             {...prod}
             handleRemove={removeItem}
-            add={add}
-            subs={subs}
+            addQty={addQty}
+            removeQty={removeQty}
           />
         ))}
       </tbody>

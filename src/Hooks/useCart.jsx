@@ -1,33 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const useCart = () => {
-  const [cart, setCart] = useState([]);
-  const total = getTotal();
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
-  function getTotal() {
-    let total = 0;
-
-    cart.forEach((prod) => {
-      total += prod.price * prod.qty;
-    });
-    return total;
-  }
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const isInCart = (id) => cart.some((product) => product.id === id);
 
   const addItem = (productToAdd) => {
-    if (!isInCart(productToAdd.id)) setCart((prev) => [...prev, productToAdd]);
-  };
-
-  const clearCart = () => {
-    setCart([]);
+    if (!isInCart(productToAdd.id)) {
+      setCart((prev) => [...prev, productToAdd]);
+    }
   };
 
   const removeItem = (id) => {
     setCart(cart.filter((prod) => prod.id !== id));
   };
 
-  const add = (id) => {
+  const addQty = (id) => {
     setCart((prev) =>
       prev.map((prod) =>
         prod.id === id && prod.qty < prod.stock
@@ -37,7 +31,7 @@ const useCart = () => {
     );
   };
 
-  const subs = (id) => {
+  const removeQty = (id) => {
     setCart((prev) =>
       prev.map((prod) =>
         prod.id === id && prod.qty > 1
@@ -47,10 +41,26 @@ const useCart = () => {
     );
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const getTotal = () => {
+    let total = 0;
+
+    cart.map((prod) => {
+      total += prod.price * prod.qty;
+    });
+
+    return total.toFixed(2);
+  };
+
+  const total = getTotal();
+
   return {
     cart,
-    add,
-    subs,
+    addQty,
+    removeQty,
     addItem,
     isInCart,
     clearCart,

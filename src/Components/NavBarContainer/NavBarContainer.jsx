@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import HamburguerButton from "../HamburguerButton/HamburguerButton";
 import NavBarList from "../NavBarList/NavBarList";
+import HamburgerButton from "../HamburgerButton/HamburgerButton";
 
 const NavBarContainer = () => {
   const [isActive, setIsActive] = useState("");
@@ -15,14 +15,14 @@ const NavBarContainer = () => {
   };
 
   return (
-    <nav className={`navbar-container ${isActive}`}>
+    <nav>
       <Link to={"/"}>
         <img src="./images/logo.webp" width={40} alt="Logo company" />{" "}
       </Link>
 
       <NavBarList handleClick={handleClick} isActive={isActive} />
 
-      <HamburguerButton handleClick={handleClick} />
+      <HamburgerButton handleClick={handleClick} />
     </nav>
   );
 };

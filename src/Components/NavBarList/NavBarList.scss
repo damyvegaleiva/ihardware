@@ -5,12 +5,14 @@
   flex-direction: column;
   position: absolute;
   top: 100%;
-  left: -100%;
+  left: -150%;
   width: 100%;
   gap: 25px;
-
-  transition: 0.5s ease-in;
-  padding: 20px 0;
+  transition: 0.7s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  padding-bottom: 40px;
 
   a {
     color: inherit;
@@ -28,4 +30,23 @@
 .navbar-container__list.active {
   left: 0;
   background: white;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 20px 55px;
+    margin-bottom: 75px;
+  }
+
+  .navbar-container__list {
+    box-shadow: none;
+    position: initial;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
 }

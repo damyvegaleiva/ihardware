@@ -1,4 +1,13 @@
-const CartItem = ({ name, qty, price, handleRemove, id, img, add, subs }) => {
+const CartItem = ({
+  name,
+  qty,
+  price,
+  handleRemove,
+  id,
+  img,
+  addQty,
+  removeQty,
+}) => {
   return (
     <tr className="cart-item">
       <th className="cart-item__img">
@@ -9,9 +18,9 @@ const CartItem = ({ name, qty, price, handleRemove, id, img, add, subs }) => {
       </th>
       <th>
         <div className="cart-item__options">
-          <button onClick={() => subs(id)}>-</button>
+          <button onClick={() => removeQty(id)}>-</button>
           <h2>{qty}</h2>
-          <button onClick={() => add(id)}>+</button>
+          <button onClick={() => addQty(id)}>+</button>
         </div>
       </th>
 

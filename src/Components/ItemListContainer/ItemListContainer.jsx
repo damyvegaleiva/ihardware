@@ -21,12 +21,10 @@ const ItemListContainer = () => {
       <HelmetTitle title={"iHardware"} />
 
       <section>
-        <h1 className="container-title">
-          {categoryId ? categoryId : "iHardware"}
-        </h1>
+        <h1 className="container-title">{categoryId || "iHardware"}</h1>
 
         <h2 className="item-list__title">
-          {categoryId ? "" : "All our products"}
+          {!categoryId && "All our products"}
         </h2>
         <ItemList products={products} />
       </section>
