@@ -1,0 +1,13 @@
+.cart-container__list {
+  border: 1px solid rgb(75, 75, 75);
+  width: 95%;
+  margin: auto;
+
+  thead {
+    th {
+      &:not(:last-child) {
+        text-decoration: underline;
+      }
+    }
+  }
+}

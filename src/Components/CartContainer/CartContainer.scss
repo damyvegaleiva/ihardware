@@ -6,28 +6,30 @@
   justify-content: center;
   font-size: 1rem;
 
+  h2 {
+    &:not(:first-child) {
+      font-size: 1.2rem;
+    }
+  }
+
   a {
     color: inherit;
   }
 }
 
-.cart-container__list {
-  border: 1px solid rgb(75, 75, 75);
-  width: 80%;
-  margin: auto;
-  border-collapse: collapse;
+@media screen and (min-width: 768px) {
+  .cart__container {
+    margin-bottom: 150px;
 
-  thead {
-    th {
-      &:not(:last-child) {
-        text-decoration: underline;
+    h2 {
+      &:not(:first-child) {
+        font-size: 1.5rem;
       }
     }
   }
 
-  tbody {
-    th {
-      font-size: 0.8rem;
-    }
+  .cart-container__list {
+    width: 80%;
+    max-width: 1200px;
   }
 }

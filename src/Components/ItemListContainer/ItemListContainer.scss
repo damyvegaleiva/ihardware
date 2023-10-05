@@ -35,3 +35,16 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (min-width: 768px) {
+  .item-list-container__item {
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  .container-title {
+    margin-top: 15px;
+  }
+}

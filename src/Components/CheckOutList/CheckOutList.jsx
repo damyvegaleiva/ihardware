@@ -7,10 +7,10 @@ const CheckOutList = ({ createOrder }) => {
   const { cart, total } = useContext(CartContext);
 
   return (
-    <div className="checkout-list__container">
+    <div className="checkout-container">
       <h2 className="container-title">CheckOut</h2>
 
-      <table className="cart-container__list">
+      <table className="checkout-list">
         <thead>
           <tr>
             <th></th>
@@ -28,6 +28,7 @@ const CheckOutList = ({ createOrder }) => {
       </table>
 
       <h2>Total: ${total}</h2>
+
       <ContactForm placeOrder={createOrder} />
     </div>
   );

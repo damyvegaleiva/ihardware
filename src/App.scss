@@ -5,19 +5,19 @@
 @import "./Components/Item/Item.scss";
 @import "./Components/ItemDetail/ItemDetail.scss";
 @import "./Components/ItemCount/ItemCount.scss";
+@import "./Components/CartContainer/CartContainer.scss";
+@import "./Components/CartList/CartList.scss";
 @import "./Components/CartItem/CartItem.scss";
 @import "./Components/Form/ContactForm.scss";
 @import "./Components/AfterAddToCartOptions/AfterAddToCartOptions.scss";
 @import "./Components/CartWidget/CartWidget.scss";
-@import "./Components/CartContainer/CartContainer.scss";
-@import "./Components/CheckOutList/CheckOutList.scss";
 @import "./Components/CheckOutContainer/CheckOutContainer.scss";
-@import "./SassStyles/breakpoints.scss";
+@import "./Components/CheckOutList/CheckOutList.scss";
+@import "./Components/CheckOutItem/CheckOutItem.scss";
 
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  // font-size: 62.5%;
 }
 
 *,

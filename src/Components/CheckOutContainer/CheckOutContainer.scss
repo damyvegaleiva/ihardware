@@ -1,4 +1,4 @@
-.checkout-container {
+.order-container {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -8,5 +8,18 @@
 
   h2 {
     font-size: 2rem;
+  }
+}
+
+.checkout-list {
+  border: 1px solid rgb(75, 75, 75);
+  width: 95%;
+  margin: auto;
+  max-width: 1200px;
+
+  thead {
+    th {
+      text-decoration: underline;
+    }
   }
 }

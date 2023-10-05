@@ -24,10 +24,11 @@ const CartItem = ({
         </div>
       </th>
 
-      <th>
-        <h2>${price}</h2>
+      <th className="cart-item__price">
+        <h2>$ {price}</h2>
       </th>
-      <th>
+
+      <th className="cart-item__remove">
         <button onClick={() => handleRemove(id)}>🗑️</button>
       </th>
     </tr>

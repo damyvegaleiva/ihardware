@@ -88,7 +88,7 @@ const CheckOutContainer = () => {
 
   if (loading) {
     return (
-      <div className="checkout-container">
+      <div className="order-container">
         <h1>Placing order...</h1>
       </div>
     );
@@ -96,7 +96,7 @@ const CheckOutContainer = () => {
 
   if (orderId) {
     return (
-      <div className="checkout-container">
+      <div className="order-container">
         <h2>Thanks for buying with us.</h2>
         <p>El id de su compra es: {orderId}</p>
       </div>
@@ -105,7 +105,7 @@ const CheckOutContainer = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="checkout-container">
+      <div className="order-container">
         <h2>Cart can&apos;t be empty</h2>
       </div>
     );
