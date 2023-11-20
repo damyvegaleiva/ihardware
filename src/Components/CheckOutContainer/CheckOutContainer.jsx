@@ -39,17 +39,19 @@ const CheckOutContainer = () => {
       const batch = writeBatch(db);
 
       const ids = cart.map((prod) => prod.id);
+
       const productsRef = query(
         collection(db, "products"),
         where(documentId(), "in", ids)
       );
 
       const productsAddedToCartFromFirestore = await getDocs(productsRef);
+
       const { docs } = productsAddedToCartFromFirestore;
 
       const outOfStock = [];
 
-      docs.forEach((doc) => {
+      docs.map((doc) => {
         const dataDoc = doc.data();
         const stockDb = dataDoc.stock;
 
@@ -71,6 +73,20 @@ const CheckOutContainer = () => {
         const { id } = orderAdded;
 
         setOrderId(id);
+
+        fetch(`https://formsubmit.co/ajax/${email}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...buyerInfo,
+            orderId: id,
+            total: `$ ${total}`,
+          }),
+        });
+
         clearCart();
 
         setTimeout(() => {

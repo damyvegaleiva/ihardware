@@ -52,7 +52,7 @@ const ContactForm = ({ placeOrder }) => {
           value={form.firstName}
           onChange={handleChange}
         />
-        {errors.firstName && <label>{errors.firstName}</label>}
+        {errors.firstName && <p>{errors.firstName}</p>}
 
         <input
           type="text"
@@ -61,7 +61,7 @@ const ContactForm = ({ placeOrder }) => {
           value={form.lastName}
           onChange={handleChange}
         />
-        {errors.lastName && <label>{errors.lastName}</label>}
+        {errors.lastName && <p>{errors.lastName}</p>}
 
         <input
           type="email"
@@ -70,7 +70,7 @@ const ContactForm = ({ placeOrder }) => {
           value={form.email}
           onChange={handleChange}
         />
-        {errors.email && <label>{errors.email}</label>}
+        {errors.email && <p>{errors.email}</p>}
 
         <button disabled={loading}>
           {loading ? "Sending..." : "Place Order"}

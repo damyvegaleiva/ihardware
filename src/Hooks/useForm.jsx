@@ -25,20 +25,3 @@ const useForm = (initialData, onValidate, placeOrder) => {
 };
 
 export default useForm;
-
-// fetch("https://formsubmit.co/ajax/damycasualty@gmail.com", {
-//   method: "POST",
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Accept': 'application/json'
-//   },
-//   body: JSON.stringify(form)
-// })
-//   .then(response => response.json())
-//   .then(data => {
-//     data.success === "true" && setForm(initialData)
-//     setLoading(false)
-//   })
-//   .catch(error => {
-//     setLoading(false)
-//   })
