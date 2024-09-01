@@ -2,14 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDnwHdTvLHlQgHlvctnGgUtU11oPtjadxs",
-  authDomain: "ecommerce-app-174b2.firebaseapp.com",
-  projectId: "ecommerce-app-174b2",
-  storageBucket: "ecommerce-app-174b2.appspot.com",
-  messagingSenderId: "650372449474",
-  appId: "1:650372449474:web:543cefe1b00457cd5e675b",
+  apiKey: "AIzaSyB20kk-ybbzrpK8eSeQ07MYeY5TgAf_Tck",
+  authDomain: "ihardware-database.firebaseapp.com",
+  projectId: "ihardware-database",
+  storageBucket: "ihardware-database.appspot.com",
+  messagingSenderId: "196324704574",
+  appId: "1:196324704574:web:ea945fe72bf7d77e50ac6f",
 };
 
 const app = initializeApp(firebaseConfig);
-
 export const db = getFirestore(app);
