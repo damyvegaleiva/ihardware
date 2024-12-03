@@ -10,4 +10,29 @@ nav {
   top: 0;
   z-index: 1;
   background: white;
+
+  a {
+    font-family: "Share Tech Mono", monospace;
+  }
+
+  > a:first-child {
+    font-size: 2rem;
+    height: 65px;
+    width: 65px;
+    font-family: "Share Tech Mono", monospace;
+    text-decoration: none;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    outline: 1px solid white;
+    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }

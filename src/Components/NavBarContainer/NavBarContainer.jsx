@@ -16,8 +16,8 @@ const NavBarContainer = () => {
 
   return (
     <nav>
-      <Link to={"/"}>
-        <img src="./images/logo.webp" width={40} alt="Logo company" />{" "}
+      <Link to={"/"} className="navLinkLogo">
+        iH
       </Link>
 
       <NavBarList handleClick={handleClick} isActive={isActive} />
