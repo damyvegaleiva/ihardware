@@ -2,35 +2,40 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import ContactForm from "../Form/ContactForm";
 import CheckOutItem from "../CheckOutItem/CheckOutItem";
+import { Helmet } from "react-helmet-async";
 
 const CheckOutList = ({ createOrder }) => {
   const { cart, total } = useContext(CartContext);
 
   return (
-    <div className="checkout-container">
-      <h2 className="container-title">CheckOut</h2>
+    <>
+      <Helmet title="Place Your Order · iHardware Checkout" />
 
-      <table className="checkout-list">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Price</th>
-          </tr>
-        </thead>
+      <div className="checkout-container">
+        <h2 className="container-title">CheckOut</h2>
 
-        <tbody>
-          {cart.map((prod) => (
-            <CheckOutItem key={prod.id} {...prod} />
-          ))}
-        </tbody>
-      </table>
+        <table className="checkout-list">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
 
-      <h2>Total: ${total}</h2>
+          <tbody>
+            {cart.map((prod) => (
+              <CheckOutItem key={prod.id} {...prod} />
+            ))}
+          </tbody>
+        </table>
 
-      <ContactForm placeOrder={createOrder} />
-    </div>
+        <h2>Total: ${total}</h2>
+
+        <ContactForm placeOrder={createOrder} />
+      </div>
+    </>
   );
 };
 

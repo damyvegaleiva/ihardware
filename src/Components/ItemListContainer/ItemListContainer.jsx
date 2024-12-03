@@ -4,20 +4,25 @@ import useFetch from "../../Hooks/useFetch";
 import HelmetTitle from "../Helmet/Helmet";
 
 const capitalizeSecondLetter = (str) => {
-  const capitalize = (index) =>
-    str[0].toUpperCase() +
-    str.slice(1, index) +
-    str[index].toUpperCase() +
-    str.slice(index + 1);
+  const capitalizeMultiple = (...indices) => {
+    let result = str;
+
+    indices.forEach((index) => {
+      result =
+        result.slice(0, index) +
+        result[index].toUpperCase() +
+        result.slice(index + 1);
+    });
+
+    return result;
+  };
 
   switch (str) {
     case "iphones":
     case "ipads":
-      return capitalize(1);
-
+      return capitalizeMultiple(1);
     case "macbooks":
-      return capitalize(3);
-
+      return capitalizeMultiple(0, 3);
     default:
       return str;
   }
@@ -25,21 +30,27 @@ const capitalizeSecondLetter = (str) => {
 
 const Loader = () => (
   <>
-    <HelmetTitle title="iHardware" />
     <span className="loader"></span>
   </>
 );
 
 const Content = ({ categoryId, products }) => {
-  const title = capitalizeSecondLetter(categoryId || "iHardware");
-  const subtitle = !categoryId && "All our products";
+  const contentHeading =
+    capitalizeSecondLetter(categoryId) ?? "All our products";
 
   return (
     <>
-      <HelmetTitle title={title} />
+      <HelmetTitle
+        title={
+          categoryId
+            ? `${capitalizeSecondLetter(categoryId)} · iHardware`
+            : "Welcome to iHardware"
+        }
+      />
       <section>
-        <h1 className="container-title">{title}</h1>
-        {subtitle && <h2 className="item-list__title">{subtitle}</h2>}
+        <h1 className="container-title">iHardware</h1>
+        <h2 className="item-list__title">{contentHeading}</h2>
+
         <ItemList products={products} />
       </section>
     </>
